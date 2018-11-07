@@ -8,6 +8,9 @@ public class SortingStrategy {
 		this.sort = sort;
 	}
 
+	public SortingStrategy() {
+	}
+
 	public Sort getSort() {
 		return sort;
 	}

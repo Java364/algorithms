@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class SimpleConsole {
 	public static boolean loopRun = true;
 	public static int numberForChooseMenu;
+	public static SortingStrategy sortingStrategy = new SortingStrategy();
 
 	public static void main(String[] args) {
 		while (loopRun) {
@@ -50,6 +51,12 @@ public class SimpleConsole {
 		case 0:
 			loopRun = false;
 		case 1:
+			System.out.println("Enter sequence of integer numbers. Separate by using spaces, do not use other characters.");
+			int[] ints = ArrayUtil.parseCustomInputToArray();
+			ArrayUtil.printArray(ints);
+			sortingStrategy.setSort(new InsertionSort());
+			int[] sort = sortingStrategy.sort(ints);
+			ArrayUtil.printArray(sort);
 			break;
 		case 2:
 			break;
