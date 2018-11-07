@@ -56,8 +56,7 @@ public class SimpleConsole {
 			int[] ints = ArrayUtil.parseCustomInputToArray();
 			ArrayUtil.printArray(ints);
 			sortingStrategy.setSort(new InsertionSort());
-			int[] sort = sortingStrategy.sort(ints);
-			ArrayUtil.printArray(sort);
+			ArrayUtil.printArray(sortingStrategy.sort(ints));
 			break;
 		case 2:
 			break;
