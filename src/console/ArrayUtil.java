@@ -3,12 +3,9 @@ package console;
 import java.util.Scanner;
 
 public class ArrayUtil {
-    public static int[] parseCustomInputToArray(){
-        Scanner sc = new Scanner(System.in);
-        String s = sc.nextLine();
+    public static int[] parseCustomInputToArray(String s){
         if (s.contains(",")||!s.contains(" ")) {
-            System.out.println("You entered in wrong format. Please, try again.");
-            return null;
+            throw new IllegalArgumentException();
         }else{
             String[] s1 = s.split(" ");
             int[] array = new int[s1.length];

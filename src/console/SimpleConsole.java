@@ -52,11 +52,20 @@ public class SimpleConsole {
 		case 0:
 			loopRun = false;
 		case 1:
-			System.out.println("Enter sequence of integer numbers. Separate by using spaces, do not use other characters.");
-			int[] ints = ArrayUtil.parseCustomInputToArray();
-			ArrayUtil.printArray(ints);
-			sortingStrategy.setSort(new InsertionSort());
-			ArrayUtil.printArray(sortingStrategy.sort(ints));
+			boolean done = false;
+			while (!done) {
+				try {
+					System.out.println("Enter sequence of integer numbers. Separate by using spaces, do not use other characters.");
+					Scanner scanner = new Scanner(System.in);
+					int[] ints = ArrayUtil.parseCustomInputToArray(sc.nextLine());
+					ArrayUtil.printArray(ints);
+					sortingStrategy.setSort(new InsertionSort());
+					ArrayUtil.printArray(sortingStrategy.sort(ints));
+					done = true;
+				}catch (Exception e){
+					System.out.println("Wrong array, please try again");
+				}
+			}
 			break;
 		case 2:
 			break;
