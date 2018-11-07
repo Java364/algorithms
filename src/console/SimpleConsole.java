@@ -6,7 +6,7 @@ public class SimpleConsole {
 	public static boolean loopRun = true;
 	public static int numberForChooseMenu;
 	public static SortingStrategy sortingStrategy = new SortingStrategy();
-	
+
 	public static void main(String[] args) {
 		while (loopRun) {
 			chooseMenu();
@@ -35,7 +35,6 @@ public class SimpleConsole {
 		} catch (Exception e) {
 			System.out.println("Oops! Looks like u enter wrong symbol. Bye");
 		}
-		
 
 	}
 
@@ -52,12 +51,20 @@ public class SimpleConsole {
 		case 0:
 			loopRun = false;
 		case 1:
-			System.out.println("Enter sequence of integer numbers. Separate by using spaces, do not use other characters.");
-			int[] ints = ArrayUtil.parseCustomInputToArray();
-			ArrayUtil.printArray(ints);
-			sortingStrategy.setSort(new InsertionSort());
-			int[] sort = sortingStrategy.sort(ints);
-			ArrayUtil.printArray(sort);
+			boolean done = false;
+			while (!done) {
+				try {
+					System.out.println("Enter sequence of integer numbers. Separate by using spaces, do not use other characters.");
+					Scanner scanner = new Scanner(System.in);
+					int[] ints = ArrayUtil.parseCustomInputToArray(sc.nextLine());
+					ArrayUtil.printArray(ints);
+					sortingStrategy.setSort(new InsertionSort());
+					ArrayUtil.printArray(sortingStrategy.sort(ints));
+					done = true;
+				}catch (Exception e){
+					System.out.println("Wrong array, please try again");
+				}
+			}
 			break;
 		case 2:
 			break;
@@ -72,7 +79,7 @@ public class SimpleConsole {
 			System.out.println("Wrong number");
 			break;
 		}
-		
+
 	}
 
 	public static void algorithmsMenu() {
@@ -109,6 +116,18 @@ public class SimpleConsole {
 		case 6:
 			break;
 		case 7:
+			System.out.println("U picked: Ways to cover in 3 steps. Enter a distance: ");
+			boolean done = true;
+			while (done) {
+				try {
+					Scanner innerScan = new Scanner(System.in);
+					int distance = innerScan.nextInt();
+					System.out.println("Result is : " + AlgorithmsClass.waysToCoverIn3StepsAlgorithm(distance) + "\n" + " ");
+					done = false;
+				} catch (Exception e) {
+					System.out.println("Wrong symbol. Enter Integer\n" + " ");
+				}
+			}
 			break;
 		case 8:
 			break;
@@ -119,17 +138,33 @@ public class SimpleConsole {
 		case 11:
 			break;
 		case 12:
+
+			boolean done = false;
+			while (!done) {
+				try {
+					System.out.println("Enter n and m. Both n and m are positive integers and 2 < = m.");
+					System.out.println("n = ");
+					Scanner scanner = new Scanner(System.in);
+					int n = scanner.nextInt();
+					System.out.println("m = ");
+					int m = scanner.nextInt();
+					System.out.println("Number of ways to tile " + AlgorithmsClass.countWaysToTileTheFloor(n, m));
+					done = true;
+				}catch (Exception e){
+					System.out.println("Wrong number, please try again");
+				}
+			}
+
 			break;
 		case 13:
 			break;
 		case 14:
 			break;
-		
 
 		default:
 			System.out.println("Wrong number");
 			break;
 		}
-		
+
 	}
 }
