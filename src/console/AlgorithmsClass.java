@@ -19,22 +19,39 @@ public class AlgorithmsClass {
 		return count[distance];
 	}
 
-    public static int countWaysToTileTheFloor(int n, int m) {
-        if (m < 2 || n < 1) {
-            throw  new IllegalArgumentException();
-        } else {
-            int count[] = new int[n + 1];
-            count[0] = 0;
-            int i;
-            for (i = 1; i <= n; i++) {
-                if (i > m)
-                    count[i] = count[i - 1] + count[i - m];
-                else if (i < m)
-                    count[i] = 1;
-                else
-                    count[i] = 2;
-            }
-            return count[n];
-        }
-    }
+	public static int countWaysToTileTheFloor(int n, int m) {
+		if (m < 2 || n < 1) {
+			throw new IllegalArgumentException();
+		} else {
+			int count[] = new int[n + 1];
+			count[0] = 0;
+			int i;
+			for (i = 1; i <= n; i++) {
+				if (i > m)
+					count[i] = count[i - 1] + count[i - m];
+				else if (i < m)
+					count[i] = 1;
+				else
+					count[i] = 2;
+			}
+			return count[n];
+		}
+	}
+
+	public static int longestPalindromeSubseq(String s) {
+		int size = s.length();
+		int[][] dp = new int[size][size];
+		// Strings of length 1 are palindrome of lentgh 1 
+		for (int i = size - 1; i >= 0; i--) {
+			dp[i][i] = 1;
+			for (int j = i + 1; j < size; j++) {
+				if (s.charAt(i) == s.charAt(j)) {
+					dp[i][j] = dp[i + 1][j - 1] + 2;
+				} else {
+					dp[i][j] = Math.max(dp[i + 1][j], dp[i][j - 1]);
+				}
+			}
+		}
+		return dp[0][size - 1];
+	}
 }
