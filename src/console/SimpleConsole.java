@@ -184,6 +184,7 @@ public class SimpleConsole {
 		case 13:
 			break;
 		case 14:
+			AlgorithmsClass.start14();
 			break;
 
 		default:

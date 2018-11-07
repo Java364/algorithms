@@ -1,5 +1,7 @@
 package console;
 
+import java.util.Scanner;
+
 public class AlgorithmsClass {
 
 	static int waysToCoverIn3StepsAlgorithm(int distance) {
@@ -54,4 +56,52 @@ public class AlgorithmsClass {
 		}
 		return dp[0][size - 1];
 	}
+	
+// Methods for Case 14
+    
+    public static void start14() {
+    	boolean done14 = true;
+        while (done14) {
+            try {
+            	Scanner innerScan14 = new Scanner(System.in);
+            	
+            	System.out.println("Enter the number of posts:");
+        		int n = innerScan14.nextInt();
+        		
+        		System.out.println("Enter the number of colors:");
+        		int k = innerScan14.nextInt();
+        		
+        		System.out.println("The number of ways of painting the fence is " + AlgorithmsClass.numWays(n, k) + ". \n");
+                done14 = false;
+            } catch (Exception e) {
+                System.out.println("You entered the wrong number \n");
+            }
+        }
+    }
+    
+    public static long numWays(int n, int k) {
+		if (n <= 0 || k <= 0) {
+			throw  new IllegalArgumentException();
+		}
+
+		if (n == 1) {
+			return k;
+		}
+
+		int[] dp1 = new int[n];
+		int[] dp2 = new int[n];
+
+		dp1[0] = 0;
+		dp2[0] = k;
+
+		for (int i = 1; i < n; i++) {
+			dp1[i] = dp2[i - 1];
+			dp2[i] = (k - 1) * (dp1[i - 1] + dp2[i - 1]);
+		}
+		
+		long sum = dp1[n - 1] + dp2[n - 1];
+		
+		return sum;
+	}
+    // The end of methods for Case 14
 }
