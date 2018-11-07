@@ -66,6 +66,7 @@ public class SimpleConsole {
 		case 4:
 			break;
 		case 5:
+
 			break;
 		default:
 			System.out.println("Wrong number");
