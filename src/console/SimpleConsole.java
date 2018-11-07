@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class SimpleConsole {
 	public static boolean loopRun = true;
 	public static int numberForChooseMenu;
-	
+
 	public static void main(String[] args) {
 		while (loopRun) {
 			chooseMenu();
@@ -34,7 +34,6 @@ public class SimpleConsole {
 		} catch (Exception e) {
 			System.out.println("Oops! Looks like u enter wrong symbol. Bye");
 		}
-		
 
 	}
 
@@ -64,7 +63,7 @@ public class SimpleConsole {
 			System.out.println("Wrong number");
 			break;
 		}
-		
+
 	}
 
 	public static void algorithmsMenu() {
@@ -101,6 +100,18 @@ public class SimpleConsole {
 		case 6:
 			break;
 		case 7:
+			System.out.println("U picked: Ways to cover in 3 steps. Enter a distance: ");
+			boolean done = true;
+			while (done) {
+				try {
+					Scanner innerScan = new Scanner(System.in);
+					int distance = innerScan.nextInt();
+					System.out.println("Result is : " + AlgorithmsClass.waysToCoverIn3StepsAlgorithm(distance) + "\n" + " ");
+					done = false;
+				} catch (Exception e) {
+					System.out.println("Wrong symbol. Enter Integer\n" + " ");
+				}
+			}
 			break;
 		case 8:
 			break;
@@ -116,12 +127,11 @@ public class SimpleConsole {
 			break;
 		case 14:
 			break;
-		
 
 		default:
 			System.out.println("Wrong number");
 			break;
 		}
-		
+
 	}
 }
