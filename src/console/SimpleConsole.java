@@ -117,13 +117,28 @@ public class SimpleConsole {
 		case 11:
 			break;
 		case 12:
+
+			boolean done = false;
+			while (!done) {
+				try {
+					System.out.println("Enter n and m. Both n and m are positive integers and 2 < = m.");
+					System.out.println("n = ");
+					Scanner scanner = new Scanner(System.in);
+					int n = scanner.nextInt();
+					System.out.println("m = ");
+					int m = scanner.nextInt();
+					System.out.println("Number of ways to tile " + AlgorithmsClass.countWaysToTileTheFloor(n, m));
+					done = true;
+				}catch (Exception e){
+					System.out.println("Wrong number, please try again");
+				}
+			}
+
 			break;
 		case 13:
 			break;
 		case 14:
 			break;
-		
-
 		default:
 			System.out.println("Wrong number");
 			break;
