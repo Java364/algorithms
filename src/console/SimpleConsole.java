@@ -136,10 +136,10 @@ public class SimpleConsole {
 					int[] ints = ArrayUtil.parseCustomInputToArray(scanner1.nextLine());
 					System.out.println("Enter number of sum");
 					int number = scanner1.nextInt();
-					System.out.println("Result is : " + AlgorithmsClass.WaysToSumToNUsingArrayElementsWithRepetition(ints, number));
+					System.out.println("Result is : " + AlgorithmsClass.waysToSumToNUsingArrayElementsWithRepetition(ints, number));
 					done5 = false;
 				} catch (Exception e) {
-					System.out.println("Wrong symbol. Enter Integer\n" + " ");
+					System.out.println("You enter noy correct data, please try again");
 				}	
 			}
 			
@@ -163,6 +163,20 @@ public class SimpleConsole {
 			}
 			break;
 		case 8:
+			System.out.println("U picked: Paths without crossing");
+			boolean done8 = true;
+			while(done8) {
+				try {
+					System.out.println("Enter positive even number");
+					Scanner scanner8 = new Scanner(System.in);
+					int numberPoints = scanner8.nextInt();
+					System.out.println("Result is : " + AlgorithmsClass.pathsWithoutCrossing(numberPoints));
+					done8 = false;
+				} catch (Exception e) {
+					System.out.println("You enter noy correct data, please try again");
+				}
+			}
+			
 			break;
 		case 9:
 			AlgorithmsClass.start9();
