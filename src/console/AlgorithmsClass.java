@@ -37,7 +37,7 @@ public class AlgorithmsClass {
 
         return solutions[N];
     }
-	//The of methods for Case 6
+	//The end of methods for Case 6
 	
 	//Methods for Case 9
 	

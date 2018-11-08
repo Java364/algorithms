@@ -181,16 +181,14 @@ public class SimpleConsole {
                 break;
             case 6:
                 System.out.println("U picked: Ways to write n as sum of two or more positive integers");
-                boolean done5 = true;
-                while (done5) {
+                boolean done6 = true;
+                while (done6) {
                     try {
-                        System.out.println("Enter array of integer possitive numbers. Separate by using spaces, do not use other characters.");
-                        Scanner scanner1 = new Scanner(System.in);
-                        int[] ints = ArrayUtil.parseCustomInputToArray(scanner1.nextLine());
-                        System.out.println("Enter number of sum");
-                        int number = scanner1.nextInt();
-                        System.out.println("Result is : " + AlgorithmsClass.WaysToSumToNUsingArrayElementsWithRepetition(ints, number));
-                        done5 = false;
+                        System.out.println("Enter one positive integer.");
+                        Scanner scanner6 = new Scanner(System.in);
+                        int N = scanner6.nextInt();
+                        System.out.println("Result is : " + WaysToWriteNAsSumOfTwoOrMorePositiveIntegers(N));
+                        done6 = false;
                     } catch (Exception e) {
                         System.out.println("Wrong symbol. Enter Integer\n" + " ");
                     }
