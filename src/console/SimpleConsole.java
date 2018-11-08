@@ -165,6 +165,8 @@ public class SimpleConsole {
 		case 8:
 			break;
 		case 9:
+			AlgorithmsClass.start9();
+			
 			break;
 		case 10:
 			System.out.println("U picked: The longest palindromic subsequence. Enter a string :");
@@ -201,6 +203,7 @@ public class SimpleConsole {
 		case 13:
 			break;
 		case 14:
+			AlgorithmsClass.start14();
 			break;
 
 		default:
