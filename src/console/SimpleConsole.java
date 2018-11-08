@@ -229,6 +229,19 @@ public class SimpleConsole {
                 }
                 break;
             case 11:
+			 System.out.println("U picked: Friend Pairs");
+                boolean done11 = true;
+                while (done11) {
+                    try {
+                        System.out.println("Enter number of friends - one positive integer.");
+                        Scanner scanner11 = new Scanner(System.in);
+                        int N = scanner11.nextInt();
+                        System.out.println("Result is : " + FriendPairs(N));
+                        done11 = false;
+                    } catch (Exception e) {
+                        System.out.println("Wrong symbol. Enter Integer\n" + " ");
+                    }
+                }
                 break;
             case 12:
 
