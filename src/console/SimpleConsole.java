@@ -63,7 +63,7 @@ public class SimpleConsole {
 					ArrayUtil.printArray(sortingStrategy.sort(ints));
 					done1 = true;
 				} catch (Exception e) {
-					System.out.println("Wrong array, please try again");
+					System.out.println("Wrong array, please try again");  
 				}
 			}
 			break;
