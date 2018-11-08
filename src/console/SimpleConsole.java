@@ -57,7 +57,7 @@ public class SimpleConsole {
                         System.out.println(
                                 "Enter sequence of integer numbers. Separate by using spaces, do not use other characters.");
                         Scanner scanner = new Scanner(System.in);
-                        int[] ints = ArrayUtil.parseCustomInputToArray(sc.nextLine());
+                        int[] ints = ArrayUtil.parseCustomInputToArray(scanner.nextLine());
                         ArrayUtil.printArray(ints);
                         sortingStrategy.setSort(new InsertionSort());
                         ArrayUtil.printArray(sortingStrategy.sort(ints));
@@ -187,7 +187,7 @@ public class SimpleConsole {
                         System.out.println("Enter one positive integer.");
                         Scanner scanner6 = new Scanner(System.in);
                         int N = scanner6.nextInt();
-                        System.out.println("Result is : " + WaysToWriteNAsSumOfTwoOrMorePositiveIntegers(N));
+//                        System.out.println("Result is : " + WaysToWriteNAsSumOfTwoOrMorePositiveIntegers(N));
                         done6 = false;
                     } catch (Exception e) {
                         System.out.println("Wrong symbol. Enter Integer\n" + " ");
@@ -236,7 +236,7 @@ public class SimpleConsole {
                         System.out.println("Enter number of friends - one positive integer.");
                         Scanner scanner11 = new Scanner(System.in);
                         int N = scanner11.nextInt();
-                        System.out.println("Result is : " + FriendPairs(N));
+//                        System.out.println("Result is : " + FriendPairs(N));
                         done11 = false;
                     } catch (Exception e) {
                         System.out.println("Wrong symbol. Enter Integer\n" + " ");
