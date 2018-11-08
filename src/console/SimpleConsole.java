@@ -112,6 +112,7 @@ public class SimpleConsole {
 
     }
 
+
     public static void algorithmsMenu() {
         System.out.println("Welcome to algorithm menu. We got a few algorithm methods for u. Choose one :");
         System.out.println("Press 1 to pick Fibonacci");
@@ -142,6 +143,23 @@ public class SimpleConsole {
             case 4:
                 break;
             case 5:
+                System.out.println("U picked: Ways to sum to N using array elements with repetition");
+                boolean done5 = true;
+                while (done5) {
+                    try {
+                        System.out.println("Enter array of integer possitive numbers. Separate by using spaces, do not use other characters.");
+                        Scanner scanner1 = new Scanner(System.in);
+                        int[] ints = ArrayUtil.parseCustomInputToArray(scanner1.nextLine());
+                        System.out.println("Enter number of sum");
+                        int number = scanner1.nextInt();
+                        System.out.println("Result is : " + AlgorithmsClass.WaysToSumToNUsingArrayElementsWithRepetition(ints, number));
+                        done5 = false;
+                    } catch (Exception e) {
+                        System.out.println("Wrong symbol. Enter Integer\n" + " ");
+                    }
+                }
+
+
                 break;
             case 6:
                 break;
@@ -166,6 +184,8 @@ public class SimpleConsole {
                 AlgorithmsClass.start9();
 
                 break;
+
+
             case 10:
                 System.out.println("U picked: The longest palindromic subsequence. Enter a string :");
                 try {
