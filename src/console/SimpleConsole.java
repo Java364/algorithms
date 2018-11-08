@@ -180,6 +180,21 @@ public class SimpleConsole {
 
                 break;
             case 6:
+                System.out.println("U picked: Ways to write n as sum of two or more positive integers");
+                boolean done5 = true;
+                while (done5) {
+                    try {
+                        System.out.println("Enter array of integer possitive numbers. Separate by using spaces, do not use other characters.");
+                        Scanner scanner1 = new Scanner(System.in);
+                        int[] ints = ArrayUtil.parseCustomInputToArray(scanner1.nextLine());
+                        System.out.println("Enter number of sum");
+                        int number = scanner1.nextInt();
+                        System.out.println("Result is : " + AlgorithmsClass.WaysToSumToNUsingArrayElementsWithRepetition(ints, number));
+                        done5 = false;
+                    } catch (Exception e) {
+                        System.out.println("Wrong symbol. Enter Integer\n" + " ");
+                    }
+                }
                 break;
             case 7:
                 System.out.println("U picked: Ways to cover in 3 steps. Enter a distance: ");
