@@ -1,5 +1,6 @@
 package console;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class SimpleConsole {
@@ -36,6 +37,7 @@ public class SimpleConsole {
 			System.out.println("Oops! Looks like u enter wrong symbol. Bye");
 		}
 
+
 	}
 
 	public static void sortingMenu() {
@@ -66,29 +68,34 @@ public class SimpleConsole {
 					System.out.println("Wrong array, please try again");  
 				}
 			}
-			break;
 		case 2:
+			try {
+				System.out.println("You choose Counting Sort");
+				Scanner scanner = new Scanner( System.in );
+				System.out.println("Enter number of Integer elements" );
+				int number = scanner.nextInt();
+				int arr[] = new int[number];
+				System.out.println("\nEnter "+ number +" integer elements");
+				for (int i = 0; i < arr.length; i++){
+					arr[i] = scanner.nextInt();}
+				CountingSorter countingSorter = new CountingSorter();
+				countingSorter.sort(arr);
+				System.out.println("\nElements after sorting ");
+				for (int i = 0; i < number; i++)
+					System.out.print(arr[i]+" ");
+				System.out.println();
+			}
+			catch (Exception e){
+				System.out.println("ssssss");
+			}
+
 			break;
+
 		case 3:
 			break;
 		case 4:
 			break;
 		case 5:
-			boolean done5 = false;
-			while (!done5) {
-				try {
-					System.out.println(
-							"Enter sequence of integer numbers. Separate by using spaces, do not use other characters.");
-					Scanner scanner = new Scanner(System.in);
-					int[] ints = ArrayUtil.parseCustomInputToArray(sc.nextLine());
-					ArrayUtil.printArray(ints);
-					sortingStrategy.setSort(new MergeSort());
-					ArrayUtil.printArray(sortingStrategy.sort(ints));
-					done5 = true;
-				} catch (Exception e) {
-					System.out.println("Wrong array, please try again");
-				}
-			}
 			break;
 		default:
 			System.out.println("Wrong number");
@@ -143,24 +150,10 @@ public class SimpleConsole {
 				}	
 			}
 			
-			
 			break;
 		case 6:
 			break;
 		case 7:
-			System.out.println("U picked: Ways to cover in 3 steps. Enter a distance: ");
-			boolean done7 = true;
-			while (done7) {
-				try {
-					Scanner innerScan = new Scanner(System.in);
-					int distance = innerScan.nextInt();
-					System.out.println(
-							"Result is : " + AlgorithmsClass.waysToCoverIn3StepsAlgorithm(distance) + "\n" + " ");
-					done7 = false;
-				} catch (Exception e) {
-					System.out.println("Wrong symbol. Enter Integer\n" + " ");
-				}
-			}
 			break;
 		case 8:
 			System.out.println("U picked: Paths without crossing");
@@ -179,46 +172,18 @@ public class SimpleConsole {
 			
 			break;
 		case 9:
-			AlgorithmsClass.start9();
-			
 			break;
 		case 10:
-			System.out.println("U picked: The longest palindromic subsequence. Enter a string :");
-			try {
-				Scanner poliScan = new Scanner(System.in);
-				String poliString = poliScan.nextLine();
-				System.out.println(
-						"The longest polindrome : " + AlgorithmsClass.longestPalindromeSubseq(poliString) + "\n" + " ");
-			} catch (Exception e) {
-				System.out.println("Wrong symbol. Enter String\n" + "\n" + " ");
-			}
 			break;
 		case 11:
 			break;
 		case 12:
-
-			boolean done12 = false;
-			while (!done12) {
-				try {
-					System.out.println("Enter n and m. Both n and m are positive integers and 2 < = m.");
-					System.out.println("n = ");
-					Scanner scanner = new Scanner(System.in);
-					int n = scanner.nextInt();
-					System.out.println("m = ");
-					int m = scanner.nextInt();
-					System.out.println("Number of ways to tile " + AlgorithmsClass.countWaysToTileTheFloor(n, m));
-					done12 = true;
-				} catch (Exception e) {
-					System.out.println("Wrong number, please try again");
-				}
-			}
-
 			break;
 		case 13:
 			break;
 		case 14:
-			AlgorithmsClass.start14();
 			break;
+
 
 		default:
 			System.out.println("Wrong number");

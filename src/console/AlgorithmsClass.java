@@ -133,28 +133,6 @@ public class AlgorithmsClass {
 	          
 	    } 
 
-// Methods for Case 14
-    
-    public static void start14() {
-    	boolean done14 = true;
-        while (done14) {
-            try {
-            	Scanner innerScan14 = new Scanner(System.in);
-            	
-            	System.out.println("Enter the number of posts:");
-        		int n = innerScan14.nextInt();
-        		
-        		System.out.println("Enter the number of colors:");
-        		int k = innerScan14.nextInt();
-        		
-        		System.out.println("The number of ways of painting the fence is " + AlgorithmsClass.numWays(n, k) + ". \n");
-                done14 = false;
-            } catch (Exception e) {
-                System.out.println("You entered the wrong number \n");
-            }
-        }
-    }
-    
     public static long numWays(int n, int k) {
 		if (n <= 0 || k <= 0) {
 			throw  new IllegalArgumentException();
