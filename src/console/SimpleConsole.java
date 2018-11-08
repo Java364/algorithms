@@ -170,7 +170,7 @@ public class SimpleConsole {
                         int[] ints = ArrayUtil.parseCustomInputToArray(scanner1.nextLine());
                         System.out.println("Enter number of sum");
                         int number = scanner1.nextInt();
-                        System.out.println("Result is : " + AlgorithmsClass.WaysToSumToNUsingArrayElementsWithRepetition(ints, number));
+                        System.out.println("Result is : " + AlgorithmsClass.waysToSumToNUsingArrayElementsWithRepetition(ints, number));
                         done5 = false;
                     } catch (Exception e) {
                         System.out.println("Wrong symbol. Enter Integer\n" + " ");
@@ -187,7 +187,7 @@ public class SimpleConsole {
                         System.out.println("Enter one positive integer.");
                         Scanner scanner6 = new Scanner(System.in);
                         int N = scanner6.nextInt();
-                        System.out.println("Result is : " + WaysToWriteNAsSumOfTwoOrMorePositiveIntegers(N));
+                        System.out.println("Result is : " + AlgorithmsClass.WaysToWriteNAsSumOfTwoOrMorePositiveIntegers(N));
                         done6 = false;
                     } catch (Exception e) {
                         System.out.println("Wrong symbol. Enter Integer\n" + " ");
@@ -210,6 +210,19 @@ public class SimpleConsole {
                 }
                 break;
             case 8:
+            	System.out.println("U picked: Paths without crossing");
+    			boolean done8 = true;
+    			while(done8) {
+    				try {
+    					System.out.println("Enter positive even number");
+    					Scanner scanner8 = new Scanner(System.in);
+    					int numberPoints = scanner8.nextInt();
+    					System.out.println("Result is : " + AlgorithmsClass.pathsWithoutCrossing(numberPoints));
+    					done8 = false;
+    				} catch (Exception e) {
+    					System.out.println("You enter noy correct data, please try again");
+    				}
+    			}
                 break;
             case 9:
                 AlgorithmsClass.start9();
@@ -236,7 +249,7 @@ public class SimpleConsole {
                         System.out.println("Enter number of friends - one positive integer.");
                         Scanner scanner11 = new Scanner(System.in);
                         int N = scanner11.nextInt();
-                        System.out.println("Result is : " + FriendPairs(N));
+                        System.out.println("Result is : " + AlgorithmsClass.FriendPairs(N));
                         done11 = false;
                     } catch (Exception e) {
                         System.out.println("Wrong symbol. Enter Integer\n" + " ");
