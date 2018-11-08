@@ -21,7 +21,7 @@ public class AlgorithmsClass {
 		return count[distance];
 	}
 	//Methods for Case 6
-	static int WaysToWriteNAsSumOfTwoOrMorePositiveIntegers(int N) {
+	public static int WaysToWriteNAsSumOfTwoOrMorePositiveIntegers(int N) {
         //The goal: To find in how many ways is possible to calculate n with positive integers.
         int solutions[] = new int[N + 1];
 
@@ -137,7 +137,20 @@ public class AlgorithmsClass {
 		}
 		return dp[0][size - 1];
 	}
-	
+	//Methods for Case 11
+	 public static int FriendPairs(int N){
+        int f[] = new int[N + 1];
+        for (int i = 0; i <= N; i++)
+        {
+            if (i <= 2)
+                f[i] = i;
+            else
+                f[i] = f[i - 1] + (i - 1) * f[i - 2];
+        }
+
+        return f[N];
+    }
+	//The end of methods for Case 11
 	public static int WaysToSumToNUsingArrayElementsWithRepetition(int array[], int n) { 
 	        int count[] = new int[n + 1]; 
 	        count[0] = 1; 
