@@ -20,6 +20,27 @@ public class AlgorithmsClass {
 
 		return count[distance];
 	}
+	//Methods for Case 6
+	static int WaysToWriteNAsSumOfTwoOrMorePositiveIntegers() {
+        //The goal: To find in how many ways is possible to calculate n with positive integers.
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Please, enter n: ");
+        int N = sc.nextInt();
+        int solutions[] = new int[N + 1];
+
+       for(int i=0;i<N;i++){
+           solutions[i]=0;
+       }
+
+        solutions[0] = 1;
+
+        for (int i = 1; i < N; i++)
+            for (int j = i; j <= N; j++)
+                solutions[j] += solutions[j - i];
+
+        return solutions[N];
+    }
+	//The of methods for Case 6
 	
 	//Methods for Case 9
 	
@@ -180,5 +201,4 @@ public class AlgorithmsClass {
 		return sum;
 	}
     // The end of methods for Case 14
-
-}
+    
