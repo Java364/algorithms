@@ -154,6 +154,19 @@ public class SimpleConsole {
 		case 6:
 			break;
 		case 7:
+			System.out.println("U picked: Ways to cover in 3 steps. Enter a distance: ");
+			boolean done7 = true;
+			while (done7) {
+				try {
+					Scanner innerScan = new Scanner(System.in);
+					int distance = innerScan.nextInt();
+					System.out.println(
+							"Result is : " + AlgorithmsClass.waysToCoverIn3StepsAlgorithm(distance) + "\n" + " ");
+					done7 = false;
+				} catch (Exception e) {
+					System.out.println("Wrong symbol. Enter Integer\n" + " ");
+				}
+			}
 			break;
 		case 8:
 			System.out.println("U picked: Paths without crossing");
@@ -174,10 +187,34 @@ public class SimpleConsole {
 		case 9:
 			break;
 		case 10:
+			System.out.println("U picked: The longest palindromic subsequence. Enter a string :");
+			try {
+				Scanner poliScan = new Scanner(System.in);
+				String poliString = poliScan.nextLine();
+				System.out.println(
+						"The longest polindrome : " + AlgorithmsClass.longestPalindromeSubseq(poliString) + "\n" + " ");
+			} catch (Exception e) {
+				System.out.println("Wrong symbol. Enter String\n" + "\n" + " ");
+			}
 			break;
 		case 11:
 			break;
 		case 12:
+			boolean done12 = false;
+			while (!done12) {
+				try {
+					System.out.println("Enter n and m. Both n and m are positive integers and 2 < = m.");
+					System.out.println("n = ");
+					Scanner scanner = new Scanner(System.in);
+					int n = scanner.nextInt();
+					System.out.println("m = ");
+					int m = scanner.nextInt();
+					System.out.println("Number of ways to tile " + AlgorithmsClass.countWaysToTileTheFloor(n, m));
+					done12 = true;
+				} catch (Exception e) {
+					System.out.println("Wrong number, please try again");
+				}
+			}
 			break;
 		case 13:
 			break;
