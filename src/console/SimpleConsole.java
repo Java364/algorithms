@@ -67,7 +67,25 @@ public class SimpleConsole {
                     }
                 }
                 break;
-            case 2:
+            case 2:try {
+                System.out.println("You choose Counting Sort");
+                Scanner scanner = new Scanner( System.in );
+                System.out.println("Enter number of Integer elements" );
+                int number = scanner.nextInt();
+                int arr[] = new int[number];
+                System.out.println("\nEnter "+ number +" integer elements");
+                for (int i = 0; i < arr.length; i++){
+                    arr[i] = scanner.nextInt();}
+                CountingSorter countingSorter = new CountingSorter();
+                countingSorter.sort(arr);
+                System.out.println("\nElements after sorting ");
+                for (int i = 0; i < number; i++)
+                    System.out.print(arr[i]+" ");
+                System.out.println();
+            }
+            catch (Exception e){
+                System.out.println("ssssss");
+            }
                 break;
             case 3:
                 boolean done3 = false;
