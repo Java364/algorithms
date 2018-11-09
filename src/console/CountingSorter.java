@@ -3,12 +3,7 @@ package console;
 class ZeroValue extends Exception{}
 
 public class CountingSorter implements Sort {
- static void dd(){
-     int n =2;
-     if (n==2){
-         return;
-     }
- }
+
       @Override
     public int[] sort( int[] array ) {
         int number = array.length;

@@ -84,7 +84,7 @@ public class SimpleConsole {
                 System.out.println();
             }
             catch (Exception e){
-                System.out.println("ssssss");
+                System.out.println("Error");
             }
                 break;
             case 3:
@@ -157,6 +157,23 @@ public class SimpleConsole {
             case 2:
                 break;
             case 3:
+                System.out.println("You choose 'Interesting row' algorithm");
+                System.out.print("Enter number of Integer elements: ");
+                Scanner scanne = new Scanner(System.in);
+                int numb = scanne.nextInt();
+                int[] array = new int[numb];
+                if (array.length == 0) {
+                    System.out.println("Element can not contain zero");
+                    return;
+                }
+                System.out.println("\nEnter " + numb + " integer elements: ");
+                for (int i = 0; i < numb; i++) {
+                    array[i] = scanne.nextInt();
+                }
+                System.out.print("Search element: ");
+                int find = scanne.nextInt();
+                IneterestingRow.interestingRow(array, find);
+
                 break;
             case 4:
                 break;
