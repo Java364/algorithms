@@ -94,7 +94,7 @@ public class SimpleConsole {
                         System.out.println(
                                 "Enter sequence of integer numbers. Separate by using spaces, do not use other characters.");
                         Scanner scanner = new Scanner(System.in);
-                        int[] ints = ArrayUtil.parseCustomInputToArray(sc.nextLine());
+                        int[] ints = ArrayUtil.parseCustomInputToArray(scanner.nextLine());
                         ArrayUtil.printArray(ints);
                         sortingStrategy.setSort(new QuickSort());
                         ArrayUtil.printArray(sortingStrategy.sort(ints));
@@ -113,7 +113,7 @@ public class SimpleConsole {
                         System.out.println(
                                 "Enter sequence of integer numbers. Separate by using spaces, do not use other characters.");
                         Scanner scanner = new Scanner(System.in);
-                        int[] ints = ArrayUtil.parseCustomInputToArray(sc.nextLine());
+                        int[] ints = ArrayUtil.parseCustomInputToArray(scanner.nextLine());
                         ArrayUtil.printArray(ints);
                         sortingStrategy.setSort(new MergeSort());
                         ArrayUtil.printArray(sortingStrategy.sort(ints));
