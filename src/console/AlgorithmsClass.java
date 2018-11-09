@@ -1,5 +1,6 @@
 package console;
 
+import java.math.BigDecimal;
 import java.util.Scanner;
 
 public class AlgorithmsClass {
@@ -151,20 +152,19 @@ public class AlgorithmsClass {
 
         return f[N];
     }
-
-    //The end of methods for Case 11
-    public static int WaysToSumToNUsingArrayElementsWithRepetition(int array[], int n) {
-        int count[] = new int[n + 1];
-        count[0] = 1;
-        for (int i = 1; i <= n; i++) {
-            for (int j = 0; j < array.length; j++) {
-                if (i >= array[j])
-                    count[i] += count[i - array[j]];
-            }
-        }
-        return count[n];
-
-    }
+	//The end of methods for Case 11
+	public static int waysToSumToNUsingArrayElementsWithRepetition(int array[], int n) { 
+	        int count[] = new int[n + 1]; 
+	        count[0] = 1; 
+	        for (int i = 1; i <= n; i++) {
+	            for (int j = 0; j < array.length; j++) {
+	                if (i >= array[j]) 
+	                    count[i] += count[i - array[j]]; 
+	            }
+	        }
+	        return count[n];  
+	          
+	    } 
 
 // Methods for Case 14
 
@@ -188,30 +188,49 @@ public class AlgorithmsClass {
         }
     }
 
-    public static long numWays(int n, int k) {
-        if (n <= 0 || k <= 0) {
-            throw new IllegalArgumentException();
-        }
+    public static BigDecimal numWays(int n, int k) {
+		if (n <= 0 || k <= 0) {
+			throw  new IllegalArgumentException();
+		}
 
-        if (n == 1) {
-            return k;
-        }
+		if (n == 1) {
+			BigDecimal bd = new BigDecimal(k);
+			return bd;
+		}
 
-        int[] dp1 = new int[n];
-        int[] dp2 = new int[n];
+		int[] dp1 = new int[n];
+		int[] dp2 = new int[n];
 
-        dp1[0] = 0;
-        dp2[0] = k;
+		dp1[0] = 0;
+		dp2[0] = k;
 
-        for (int i = 1; i < n; i++) {
-            dp1[i] = dp2[i - 1];
-            dp2[i] = (k - 1) * (dp1[i - 1] + dp2[i - 1]);
-        }
-
-        long sum = dp1[n - 1] + dp2[n - 1];
-
-        return sum;
-    }
-}
+		for (int i = 1; i < n; i++) {
+			dp1[i] = dp2[i - 1];
+			dp2[i] = (k - 1) * (dp1[i - 1] + dp2[i - 1]);
+		}
+		
+		long sum = dp1[n - 1] + dp2[n - 1];
+		
+		BigDecimal bd = new BigDecimal(sum);
+				
+		return bd;
+	}
     // The end of methods for Case 14
     
+    public static int pathsWithoutCrossing (int numberPoints) {
+    	if(numberPoints%2 == 1) {
+    		return 0;
+    	}
+    	int tempNumberPoints = numberPoints/2;
+    	int[] temp = new int [tempNumberPoints + 1]; 
+    	temp[0] = temp[1] = 1;
+    	for (int i = 2; i <= tempNumberPoints; i++) { 
+            temp[i] = 0; 
+            for (int j = 0; j < i; j++)  {
+                temp[i] += temp[j] * temp[i - j - 1]; 
+            }
+        } 
+    	return temp[tempNumberPoints];
+    }
+
+}

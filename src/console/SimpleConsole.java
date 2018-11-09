@@ -84,7 +84,7 @@ public class SimpleConsole {
                 System.out.println();
             }
             catch (Exception e){
-                System.out.println("ssssss");
+                System.out.println("Error");
             }
                 break;
             case 3:
@@ -157,6 +157,23 @@ public class SimpleConsole {
             case 2:
                 break;
             case 3:
+                System.out.println("You choose 'Interesting row' algorithm");
+                System.out.print("Enter number of Integer elements: ");
+                Scanner scanne = new Scanner(System.in);
+                int numb = scanne.nextInt();
+                int[] array = new int[numb];
+                if (array.length == 0) {
+                    System.out.println("Element can not contain zero");
+                    return;
+                }
+                System.out.println("\nEnter " + numb + " integer elements: ");
+                for (int i = 0; i < numb; i++) {
+                    array[i] = scanne.nextInt();
+                }
+                System.out.print("Search element: ");
+                int find = scanne.nextInt();
+                IneterestingRow.interestingRow(array, find);
+
                 break;
             case 4:
                 break;
@@ -170,7 +187,7 @@ public class SimpleConsole {
                         int[] ints = ArrayUtil.parseCustomInputToArray(scanner1.nextLine());
                         System.out.println("Enter number of sum");
                         int number = scanner1.nextInt();
-                        System.out.println("Result is : " + AlgorithmsClass.WaysToSumToNUsingArrayElementsWithRepetition(ints, number));
+                        System.out.println("Result is : " + AlgorithmsClass.waysToSumToNUsingArrayElementsWithRepetition(ints, number));
                         done5 = false;
                     } catch (Exception e) {
                         System.out.println("Wrong symbol. Enter Integer\n" + " ");
@@ -187,7 +204,7 @@ public class SimpleConsole {
                         System.out.println("Enter one positive integer.");
                         Scanner scanner6 = new Scanner(System.in);
                         int N = scanner6.nextInt();
-//                        System.out.println("Result is : " + WaysToWriteNAsSumOfTwoOrMorePositiveIntegers(N));
+                        System.out.println("Result is : " + AlgorithmsClass.WaysToWriteNAsSumOfTwoOrMorePositiveIntegers(N));
                         done6 = false;
                     } catch (Exception e) {
                         System.out.println("Wrong symbol. Enter Integer\n" + " ");
@@ -210,6 +227,19 @@ public class SimpleConsole {
                 }
                 break;
             case 8:
+            	System.out.println("U picked: Paths without crossing");
+    			boolean done8 = true;
+    			while(done8) {
+    				try {
+    					System.out.println("Enter positive even number");
+    					Scanner scanner8 = new Scanner(System.in);
+    					int numberPoints = scanner8.nextInt();
+    					System.out.println("Result is : " + AlgorithmsClass.pathsWithoutCrossing(numberPoints));
+    					done8 = false;
+    				} catch (Exception e) {
+    					System.out.println("You enter noy correct data, please try again");
+    				}
+    			}
                 break;
             case 9:
                 AlgorithmsClass.start9();
@@ -236,7 +266,7 @@ public class SimpleConsole {
                         System.out.println("Enter number of friends - one positive integer.");
                         Scanner scanner11 = new Scanner(System.in);
                         int N = scanner11.nextInt();
-//                        System.out.println("Result is : " + FriendPairs(N));
+                        System.out.println("Result is : " + AlgorithmsClass.FriendPairs(N));
                         done11 = false;
                     } catch (Exception e) {
                         System.out.println("Wrong symbol. Enter Integer\n" + " ");
