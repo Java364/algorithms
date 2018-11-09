@@ -1,5 +1,6 @@
 package console;
 
+import java.math.BigDecimal;
 import java.util.Scanner;
 
 public class AlgorithmsClass {
@@ -186,13 +187,14 @@ public class AlgorithmsClass {
         }
     }
     
-    public static long numWays(int n, int k) {
+    public static BigDecimal numWays(int n, int k) {
 		if (n <= 0 || k <= 0) {
 			throw  new IllegalArgumentException();
 		}
 
 		if (n == 1) {
-			return k;
+			BigDecimal bd = new BigDecimal(k);
+			return bd;
 		}
 
 		int[] dp1 = new int[n];
@@ -208,7 +210,9 @@ public class AlgorithmsClass {
 		
 		long sum = dp1[n - 1] + dp2[n - 1];
 		
-		return sum;
+		BigDecimal bd = new BigDecimal(sum);
+				
+		return bd;
 	}
     // The end of methods for Case 14
     
